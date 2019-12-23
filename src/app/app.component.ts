@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-recipe-book';
+  selectedComponent = 'recipe';
+
+  onNavigate(component: string) {
+    this.selectedComponent = component;
+  }
 }
