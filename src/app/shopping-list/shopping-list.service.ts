@@ -20,5 +20,14 @@ export class ShoppingListService {
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
 
+  addIngredients(ingredients: Ingredient[]) {
+    // ingredients.forEach((ingredient: Ingredient) =>
+    //   this.addIngredient(ingredient)
+    // );
+    // Spread ingredients array into individual items.  This avoids multiple events being generated
+    this.ingredients.push(...ingredients);
+    this.ingredientsChanged.emit(this.ingredients.slice());
+  }
+
   constructor() {}
 }
